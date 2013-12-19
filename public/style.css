@@ -6,14 +6,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: Helvetica;
-  background-image: url(http://placekitten.com/700/700);
-  background-size: cover;
+  background-color: pink;
 }
 
 #main_container {
   width: 30%;
   margin: 0 auto 0 auto;
-  background-color: rgba(158,192,133,0.73);
+  background-color: teal;
   padding: 0;
 }
 
@@ -36,7 +35,7 @@ body {
 
 .post {
   margin: 10px 10px 30px 10px;
-  background-color: rgba(158,192,133,0.73);
+  background-color: teal;
 }
 
 .post_new {

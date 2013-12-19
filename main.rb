@@ -1,10 +1,11 @@
 require 'sinatra'
+require 'sinatra/reloader'
 require 'sinatra/activerecord'
 require 'sinatra/activerecord/rake'
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 
 # configures the database
-require_relative 'config/environments'
+require_relative 'config'
 
 # models included
 require_relative 'models/post'
@@ -12,9 +13,6 @@ require_relative 'models/user'
 
 # enable sessions
 enable :sessions
-
-# set environment variables
-set :environment, :development
 
 get '/' do 
   @username = session[:username] if session[:username]
@@ -61,14 +59,14 @@ post '/posts/update' do
 end
 
 post '/posts/delete/:id' do 
-  @username = session[:username] if session[:username]
+  # @username = session[:username] if session[:username]
   id = params[:id]
   Post.delete(id)
   redirect '/posts'
 end
 
 post '/posts/create' do 
-  @username = session[:username] if session[:username]
+  @username = params[:username]
   title = params[:title]
   body = params[:body]
   # user_id = params[:user_id].to_i
