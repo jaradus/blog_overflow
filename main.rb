@@ -1,11 +1,10 @@
 require 'sinatra'
-require 'sinatra/reloader'
 require 'sinatra/activerecord'
 require 'sinatra/activerecord/rake'
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 
 # configures the database
-require_relative 'config'
+require_relative 'config/environments'
 
 # models included
 require_relative 'models/post'
@@ -13,6 +12,9 @@ require_relative 'models/user'
 
 # enable sessions
 enable :sessions
+
+# set environment variables
+set :environment, :development
 
 get '/' do 
   @username = session[:username] if session[:username]
