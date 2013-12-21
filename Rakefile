@@ -9,7 +9,7 @@ require_relative 'models/post'
 
 # Mario's rake db:seed task
 namespace :db do
-  desc "Seed Empty simple_blog2 Database"
+  desc "Seed Empty simple_blog Database"
   task :seed do
     user0 = User.create(:last_name => "onimous", :first_name => "ann", :username => "anonymous")
     puts "user #{user0.username} was created!"
@@ -23,27 +23,5 @@ namespace :db do
     puts "user #{user4.username} was created!"
     post = Post.create(:title => "Seed Post", :body => "I am part of your database from the start!", user: user0)
     puts "post #{post.title} was created!"
-  end
-end
-
-namespace :count do 
-  desc "count to 100"
-  task :to_100 do 
-    (1..100).each do |n|
-      puts "#{n}"
-    end
-  end
-end
-
-namespace :greet do 
-
-  desc "says hello"
-  task :hello do 
-    puts "Hello!"
-  end
-
-  desc "says goodbye"
-  task :goodbye do 
-    puts "Goodbye!"
   end
 end

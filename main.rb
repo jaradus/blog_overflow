@@ -77,6 +77,12 @@ post '/posts/create' do
 
   user = User.where("username='#{@username}'").first
 
+  unless user.empty?
+    username = user_matches.first.username
+  else
+    user = User.where("username='anonymous'")
+  end
+
   Post.create(title: title, body: body, user: user)
   redirect '/posts'
 end
