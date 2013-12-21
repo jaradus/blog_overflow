@@ -15,10 +15,10 @@ configure :production do
   #configuration info
   ActiveRecord::Base.establish_connection(
       :adapter => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
-      :host    => db.host,
-      :username => db.user,
+      :host    => "ec2-54-204-42-135.compute-1.amazonaws.com",
+      :username => "bymramdjatyans",
       :password => db.password,
-      :database => db.path[1..-1],
+      :database => "dd6qvo2fk6jcnf",
       :encoding => 'utf8'
   )
 end
