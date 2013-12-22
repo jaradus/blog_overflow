@@ -2,6 +2,7 @@
 <h1 class="main_heading">Posts</h1>
 
   <!-- Show all posts -->
+  <div class="block_overflow">
   <ul id="posts">
   <% @posts_ordered.each do |post| %>
     <li class="post">
@@ -24,11 +25,10 @@
 
     </li>
   <% end %>
-
+  </div>
   <!-- Create post -->
   <form action="/posts/create" method="POST" class="post_new">
-    <p>Title:<br><br />
-      <input type="text" name="title" />
+    <p>Title: <input type="text" name="title" /><br>
     <% if @username %>
       <input type="hidden" name="username" value="<%= @username %>" />
     <% else %>

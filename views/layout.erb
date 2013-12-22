@@ -10,6 +10,7 @@
   <div><a href="/posts">Posts</a></div>
   <% if @username %>
   <span> Welcome, <%= @username %></span>
+  <div><a href="/users/logout">Logout</a></div>
   <% else %>
     <div><a href="/users/new">register</a></div>
     <div> <a href="/users/sign_in">login</a></div>

@@ -61,7 +61,6 @@ post '/posts/update' do
 end
 
 post '/posts/delete/:id' do 
-  # @username = session[:username] if session[:username]
   id = params[:id]
   Post.delete(id)
   redirect '/posts'
@@ -71,9 +70,6 @@ post '/posts/create' do
   @username = params[:username]
   title = params[:title]
   body = params[:body]
-  # user_id = params[:user_id].to_i
-  # create_new_post(title, body)
-  # user = User.find(user_id)
 
   user_matches = User.where("username='#{@username}'")
 
@@ -99,7 +95,13 @@ get '/users/sign_in' do
   erb :"users/sign_in"
 end
 
-# Ethan's HTTP method handler
+get '/users/logout' do
+   session[:username] = nil
+   erb :"users/logout"
+end
+
+# HTTP method handler
+
 post '/users/create' do
   @username = session[:username] if session[:username]
   first_name = params[:first_name]
@@ -107,26 +109,6 @@ post '/users/create' do
   username = params[:username].downcase
   bio = params[:bio]
   user = User.create(first_name: first_name, last_name: last_name, username: username, bio: bio)
-  
-  # Matt P.'s Way
-
-  # user = User.new
-  # user.first_name = params[:first_name]
-  # user.last_name = params[:last_name]
-  # user.username = params[:username].downcase
-  # user.bio = params[:bio]
-  # user.save!
-
-  # Yet another Way:
-
-  # user = {}
-  # user[:first_name] = params[:first_name]
-  # user[:last_name] = params[:last_name]
-  # user[:username] = params[:username].downcase
-  # user[:bio] = params[:bio]
-  # User.create(user)
-
-
   redirect '/'
 end
 
