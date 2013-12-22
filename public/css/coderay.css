@@ -7,7 +7,7 @@
  
 .CodeRay pre {
   margin: 0px;
-  padding: 1em;
+  padding: 0.5em;
 }
  
 div.CodeRay { }
@@ -15,7 +15,7 @@ span.CodeRay { white-space: pre; border: 0px; padding: 2px }
  
 table.CodeRay { border-collapse: collapse; width: 100%; padding: 2px }
 table.CodeRay td {
-  padding: 1em 0.5em;
+  padding: 1em 0.2em;
   vertical-align: top;
 }
  

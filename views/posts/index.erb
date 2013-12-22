@@ -9,7 +9,7 @@
       <h2 class="post_title"><a href="/post/<%= post['id'] %>"><%= post['title'] %></a></h2>
       <p>by <%= post.user.username %> </p>
       <p>created at <%= post.created_at %> </p>
-      <p><div class="post_body"><%= CodeRay.scan(post['body'], post['language']).div(:line_numbers => :table, :wrap => :div, :css => :style) %></div></p>
+      <p><div class="post_body"><%= CodeRay.scan(post['body'], post['language']).div(:line_numbers => :table, :wrap => :page, :css => :style) %></div></p>
 
     <!-- Editing functions -->
       <% if post.user.username == @username %>
