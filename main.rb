@@ -26,7 +26,8 @@ end
 get '/posts' do
   @username = session[:username] if session[:username]
   @users = User.all
-  @posts = Post.all
+  posts = Post.all
+  @posts_ordered = Post.order("updated_at DESC").where(:id => posts)
   p @posts
   erb :"posts/index"
 end
