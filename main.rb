@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/activerecord/rake'
+require 'coderay'
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 
 # configures the database
