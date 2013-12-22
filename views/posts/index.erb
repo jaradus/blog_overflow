@@ -2,15 +2,16 @@
 <h1 class="main_heading">Posts</h1>
 
   <!-- Show all posts -->
-  <div class="block_overflow">
+  
   <ul id="posts">
   <% @posts_ordered.each do |post| %>
+    <div class="block_overflow">
     <li class="post">
       <h2 class="post_title"><a href="/post/<%= post['id'] %>"><%= post['title'] %></a></h2>
       <p>by <%= post.user.username %> </p>
       <p>created at <%= post.created_at %> </p>
       <p><div class="post_body"><%= CodeRay.scan(post['body'], post['language']).div(:line_numbers => :table, :wrap => :page, :css => :style) %></div></p>
-
+    </div>
     <!-- Editing functions -->
       <% if post.user.username == @username %>
         <!-- Delete post -->
@@ -25,7 +26,6 @@
 
     </li>
   <% end %>
-  </div>
   <!-- Create post -->
   <form action="/posts/create" method="POST" class="post_new">
     <p>Title: <input type="text" name="title" /><br>
