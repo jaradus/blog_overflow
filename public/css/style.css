@@ -40,6 +40,8 @@ nav a {
   width: 60%;
   margin: 0 auto 0 auto;
   padding: 0;
+  background: #f2f2f2 url('/images/noise.png?1361611546') top left;
+  border-bottom: 1px solid #bfbfbf;
 }
 
 .main_heading {
@@ -61,7 +63,7 @@ nav a {
 
 .post {
   margin: 10px 10px 30px 10px;
-  background-color: teal;
+  background-color: lightgrey;
 }
 
 .post_new {
