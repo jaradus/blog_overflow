@@ -9,7 +9,7 @@
       <h2 class="post_title"><a href="/post/<%= post['id'] %>"><%= post['title'] %></a></h2>
       <p>by <%= post.user.username %> </p>
       <p>created at <%= post.created_at %> </p>
-      <p class="post_body"><%= post['body'] %></p>
+      <p class="post_body"><%= CodeRay.scan(post['body'], ":#{post['language']}").div(:line_numbers => :table) %></p>
 
     <!-- Editing functions -->
       <% if post.user.username == @username %>
@@ -37,6 +37,13 @@
     Body:<br />
       <textarea name="body"></textarea>
     </p>
+    Input Language:
+    <select>
+      <option value="plaintext">Plain text</option>
+      <option value="ruby">Ruby</option>
+      <option value="html">HTML</option>
+      <option value="css">CSS</option>
+    </select>
     <input type="submit" value="Post" />
   </form>
 

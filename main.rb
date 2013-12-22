@@ -70,6 +70,7 @@ post '/posts/create' do
   @username = params[:username]
   title = params[:title]
   body = params[:body]
+  langauge = params[:langauge]
 
   user_matches = User.where("username='#{@username}'")
 
@@ -79,7 +80,7 @@ post '/posts/create' do
     user = User.where("username='anonymous'")
   end
 
-  Post.create(title: title, body: body, user: user)
+  Post.create(title: title, body: body, user: user, langauge: language)
   redirect '/posts'
 end
 
