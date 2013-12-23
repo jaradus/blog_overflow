@@ -37,11 +37,14 @@ nav a {
 
 /* Content */
 #main_container {
-  width: 60%;
+  width: 80%;
   margin: 0 auto 0 auto;
   padding: 0;
   background: #f2f2f2 url('/images/noise.png?1361611546') top left;
   border-bottom: 1px solid #bfbfbf;
+  overflow: auto;
+  overflow-x: auto; /* Credit and thanks to Yaniv */
+  overflow-y: hidden;
 }
 
 .main_heading {
@@ -64,6 +67,10 @@ nav a {
 .post {
   margin: 10px 10px 30px 10px;
   background-color: white;
+}
+
+.post_body {
+  border: 1px solid lightgrey;
 }
 
 .post_new {
