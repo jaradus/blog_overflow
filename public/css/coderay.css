@@ -21,6 +21,10 @@ table.CodeRay {
 table.CodeRay td {
   padding: 0px 5px;
   vertical-align: top;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .CodeRay .line-numbers, .CodeRay .no {

@@ -42,9 +42,6 @@ nav a {
   padding: 0;
   background: #f2f2f2 url('/images/noise.png?1361611546') top left;
   border-bottom: 1px solid #bfbfbf;
-  overflow: auto;
-  overflow-x: auto; /* Credit and thanks to Yaniv */
-  overflow-y: hidden;
 }
 
 .main_heading {
@@ -57,6 +54,13 @@ nav a {
   margin: 0;
   padding: 10px;
   list-style-type: none;
+}
+
+.code {
+  overflow: auto;
+  overflow-x: auto; /* Credit and thanks to Yaniv */
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 
 .post_title {
