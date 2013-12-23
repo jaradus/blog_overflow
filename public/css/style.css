@@ -50,8 +50,6 @@ nav a {
   font-weight: bold;
 }
 
-
-
 #posts {
   margin: 0;
   padding: 10px;
@@ -65,7 +63,7 @@ nav a {
 
 .post {
   margin: 10px 10px 30px 10px;
-  background-color: lightgrey;
+  background-color: white;
 }
 
 .post_new {
