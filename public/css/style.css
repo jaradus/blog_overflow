@@ -104,15 +104,41 @@ nav a:hover {
 }
 
 .post {
-  margin: 10px 10px 30px 10px;
+  margin: 30px 10px 20px 10px;
   background-color: white;
+}
+
+.post a {
+  text-decoration: none;
+  color: black;
+}
+
+.post a:hover {
+  color: #1bc5de;
 }
 
 .post_body {
   border: 1px solid lightgrey;
+  background: white;
+}
+
+.post_edit_delete form {
+  display: inline;
+  margin: 0px 0px 0px 10px;
+  border: 1px solid lightgrey;
+  background: white;
 }
 
 .post_new {
   padding: 10px;
   margin: 0;
+}
+
+.new_post {
+  margin-left: 5px;
+}
+
+.new_post textarea {
+  width: 400px;
+  height: 100px;
 }

@@ -13,6 +13,7 @@
       <p><div class="post_body"><%= CodeRay.scan(post['body'], post['language']).html(:line_numbers => :table, :wrap => :div, :css => :style) %></div></p>
     </div>
     <!-- Editing functions -->
+    <div class="post_edit_delete">
       <% if post.user.username == @username %>
         <!-- Delete post -->
         <form action="/posts/delete/<%= post['id'] %>" method="POST">
@@ -23,28 +24,32 @@
           <button>edit</button>
         </form>
       <% end %>
+    </div>
 
     </li>
   <% end %>
   <!-- Create post -->
-  <form action="/posts/create" method="POST" class="post_new">
-    <p>Title: <input type="text" name="title" /><br>
-    <% if @username %>
-      <input type="hidden" name="username" value="<%= @username %>" />
-    <% else %>
-      <input type="hidden" name="username" value="anonymous" />
-    <% end %>
-    Body:<br />
-      <textarea name="body"></textarea>
-    </p>
-    Input Language:
-    <select name="language">
-      <option value="plaintext">Plain text</option>
-      <option value="ruby">Ruby</option>
-      <option value="html">HTML</option>
-      <option value="css">CSS</option>
-    </select>
-    <input type="submit" value="Post" />
-  </form>
+  <div class="new_post">
+    <h2>New Post</h2>
+    <form action="/posts/create" method="POST" class="post_new">
+      <p>Title: <input type="text" name="title" /><br>
+      <% if @username %>
+        <input type="hidden" name="username" value="<%= @username %>" />
+      <% else %>
+        <input type="hidden" name="username" value="anonymous" />
+      <% end %>
+      Body:<br />
+        <textarea name="body"></textarea>
+      </p>
+      Input Language:
+      <select name="language">
+        <option value="plaintext">Plain text</option>
+        <option value="ruby">Ruby</option>
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+      </select>
+      <input type="submit" value="Post" />
+    </form>
+  </div>
 
 </div>
