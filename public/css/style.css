@@ -10,6 +10,30 @@ body {
   background-color: #323845;
 }
 
+/* Homepage */
+.home {
+  height: 700px;
+  text-align: center;
+  background-image: url(/images/home.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.home_text {
+  padding-top: 180px;
+}
+
+.home_text h1 {
+  font-size: 100px;
+  color: #ffffff;
+}
+
+.home_text p {
+  font-size: 50px;
+  color: #ac3636;
+  background: rgba(255,255,255,0.75);
+}
+
 /* Nav */
 nav {
   /* background dark blue-black */
